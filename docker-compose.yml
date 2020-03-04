@@ -13,9 +13,6 @@ services:
       - "4000:4000"
     depends_on:
       - db
-        #volumes:
-        #- '.:/usr/src/app'
-        #    command: ["./entrypoint.sh", db:5432, "--", "mix", "phx.server"]
     command: bash -c "mix ecto.setup && mix phx.server"
     links:
       - "db:db"
@@ -24,6 +21,7 @@ services:
     volumes:
       - .:/usr/src/app
       - /usr/src/app/assets/node_modules
+      - /usr/src/app/deps
   db:
     image: postgres:latest
     container_name: db
