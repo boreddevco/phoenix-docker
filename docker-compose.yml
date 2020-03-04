@@ -21,6 +21,9 @@ services:
       - "db:db"
     networks:
       - app-net
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/assets/node_modules
   db:
     image: postgres:latest
     container_name: db

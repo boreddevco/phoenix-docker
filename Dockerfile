@@ -15,7 +15,7 @@ COPY . .
 RUN mix local.hex --force
 RUN mix local.rebar --force
 RUN mix deps.get
-RUN mix do compile
+# RUN mix do compile
 
 RUN npm i --prefix ./assets
 
