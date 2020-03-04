@@ -20,5 +20,3 @@ RUN mix deps.get
 RUN npm i --prefix ./assets
 
 EXPOSE 4000
-
-# CMD ["./entrypoint.sh"]
