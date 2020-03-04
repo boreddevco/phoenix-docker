@@ -1,0 +1,43 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: "."
+    environment:
+      PGUSER: postgres
+      PGPASSWORD: postgres
+      PGDATABASE: app_dev
+      PGHOST: db
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
+        #volumes:
+        #- '.:/usr/src/app'
+        #    command: ["./entrypoint.sh", db:5432, "--", "mix", "phx.server"]
+    command: bash -c "mix ecto.setup && mix phx.server"
+    links:
+      - "db:db"
+    networks:
+      - app-net
+  db:
+    image: postgres:latest
+    container_name: db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /var/lib/postgresql/data/pgdata
+    restart: always
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - app-net
+volumes:
+  pgdata:
+
+networks:
+  app-net:
+    driver: bridge

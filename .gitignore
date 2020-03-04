@@ -1,0 +1,54 @@
+
+# Created by https://www.gitignore.io/api/erlang,elixir,phoenix
+# Edit at https://www.gitignore.io/?templates=erlang,elixir,phoenix
+
+### Elixir ###
+/_build
+/cover
+/deps
+/doc
+/.fetch
+erl_crash.dump
+*.ez
+*.beam
+/config/*.secret.exs
+.elixir_ls/
+
+### Elixir Patch ###
+
+### Erlang ###
+.eunit
+deps
+*.o
+*.plt
+ebin/*.beam
+rel/example_project
+.concrete/DEV_MODE
+.rebar
+
+### Phoenix ###
+# gitignore template for Phoenix projects
+# website: http://www.phoenixframework.org/
+#
+# Recommended template: Elixir.gitignore
+
+# Temporary files
+/tmp
+
+# Static artifacts
+/node_modules
+/assets/node_modules
+
+# Since we are building assets from web/static,
+# we ignore priv/static. You may want to comment
+# this depending on your deployment strategy.
+/priv/static/
+
+# Installer-related files
+/installer/_build
+/installer/tmp
+/installer/doc
+/installer/deps
+
+# End of https://www.gitignore.io/api/erlang,elixir,phoenix
+

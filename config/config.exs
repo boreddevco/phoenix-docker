@@ -7,13 +7,16 @@
 # General application configuration
 use Mix.Config
 
+config :app,
+  ecto_repos: [App.Repo]
+
 # Configures the endpoint
 config :app, AppWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "SFJiy4uZRMAk7PN8eEEOrCkD0hr0VULpE1ylm6U3ReL3W8y8BMtoDiZZuQC9oWBC",
+  secret_key_base: "yNU/Yl2YGRvU+Umr2hfZykbqxQIPSapMB5xQmO6Av4WcU6cTTiZ7+Jx/IWz3NnXT",
   render_errors: [view: AppWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: App.PubSub, adapter: Phoenix.PubSub.PG2],
-  live_view: [signing_salt: "vFQ4YAJ0"]
+  live_view: [signing_salt: "JSDUEBdF"]
 
 # Configures Elixir's Logger
 config :logger, :console,
