@@ -36,7 +36,7 @@ docker-compose build
 ```
 2. Run
 ```sh
-docker-compose run
+docker-compose up
 ```
 
 
